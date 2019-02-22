@@ -1,5 +1,5 @@
 ///
-/// Prototype by Pixelarity
+/// Big Picture by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,53 +7,21 @@
 /* Icon */
 
 	.icon {
-		@include icon;
-		border-bottom: none;
-		position: relative;
+		text-decoration: none;
+
+		&:before {
+			display: inline-block;
+			font-family: FontAwesome;
+			font-size: 1.25em;
+			text-decoration: none;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
 
 		> .label {
 			display: none;
 		}
-
-		&.major {
-			@include vendor('transform', 'rotate(45deg)');
-			border-radius: _size(border-radius);
-			border: solid 1px;
-			display: block;
-			font-size: 1.75em;
-			height: 2.5em;
-			line-height: 2.5em;
-			margin: 0 auto _size(element-margin) auto;
-			position: relative;
-			text-align: center;
-			top: 0.5em;
-			width: 2.5em;
-
-			&:before {
-				@include vendor('transform', 'rotate(-45deg)');
-				display: block;
-				text-align: center;
-			}
-		}
 	}
-
-	@mixin color-icon($p: null) {
-		$highlight: _palette($p, highlight);
-
-		.icon {
-			&.major {
-				border-color: _palette($p, border);
-
-				&:before {
-					@if $p == $highlight {
-						color: _palette($highlight, fg-bold);
-					}
-					@else {
-						color: _palette($highlight, bg);
-					}
-				}
-			}
-		}
-	}
-
-	@include color-icon;
