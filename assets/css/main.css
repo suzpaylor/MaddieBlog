@@ -2295,3 +2295,13 @@ input, select, textarea {
 			}
 
 		}
+
+/* my additions */
+
+@media screen and (max-width: 480px) {
+
+	.hide_me_mobile {
+		display: none;
+	}
+
+}
